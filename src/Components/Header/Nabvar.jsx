@@ -6,7 +6,7 @@ import { useState } from "react";
 const Nabvar = () => {
     const [Open,setOpen]=useState(false)
     return (
-          <nav className="flex justify-between items-center max-w-[1140px] mx-auto my-10">
+          <nav className="flex justify-between items-center max-w-[1140px] mx-auto my-10 px-2">
              <div>
                 <span onClick={()=>setOpen(!Open)} className="flex gap-2 justify-center items-center">
                     {

@@ -5,7 +5,7 @@ import bannerPng from '../../assets/pngwing 1.png'
 const Banner = () => {
     return (
         <div>
-            <section className='max-w-[1140px] mx-auto bg-[#1313130d] rounded-[.9rem]'>
+            <section className='max-w-[1140px] mx-auto bg-[#1313130d] rounded-[.9rem] px-2'>
            <div className='flex flex-col md:flex-row gap-2 py-15 px-20'>
                    <div className='flex flex-1 flex-col justify-center items-start'>
                     <h1 className='text-[3.4rem] playfair font-medium'> Books to freshen up your bookshelf</h1>
