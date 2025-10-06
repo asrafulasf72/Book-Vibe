@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router';
 import './bookdetails.css'
+import { addStoredDB } from '../../Utility/addToDb';
 
 const BookDetails = () => {
     const {id}=useParams();
@@ -8,6 +9,10 @@ const BookDetails = () => {
     const bookData=useLoaderData();
     const singleBook=bookData.find(book=> book.bookId === bookId )
     const {image,bookName,author,category,review,totalPages,tags,publisher,yearOfPublishing,rating}=singleBook;
+
+    const handelMarkAsRead=(id)=>{
+        addStoredDB(id)
+    }
     return (
         <div className='max-w-[1140px] mx-auto'>
                <div className='flex gap-10 my-8'>
@@ -46,8 +51,8 @@ const BookDetails = () => {
                        </div>
 
                        <div className='flex gap-3 mt-3'>
-                           <button className='border-2 border-gray-300 rounded-[.5rem] px-5 py-2 text-black text-[1.1rem] font-semibold'>Read</button>
-                           <button className='text-white text-[1.1rem] font-semibold bg-[#50b1c9] px-5 py-2 rounded-[.5rem]'>Wishlist</button>
+                           <button onClick={()=>handelMarkAsRead(id)} className='cursor-pointer border-2 border-gray-300 rounded-[.5rem] px-5 py-2 text-black text-[1.1rem] font-semibold'>Mark As Read</button>
+                           <button className='cursor-pointer text-white text-[1.1rem] font-semibold bg-[#50b1c9] px-5 py-2 rounded-[.5rem]'>Add To Wishlist</button>
                        </div>
                    </div>
                </div>
